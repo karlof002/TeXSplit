@@ -1,0 +1,11 @@
+.DS_Store
+.codex/
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserdata/
+xcuserdata/
+
+# Local TeX Live runtime. Keep the README, but do not commit the large runtime.
+TeXSplit/Resources/TeXLive/*
+!TeXSplit/Resources/TeXLive/README.md

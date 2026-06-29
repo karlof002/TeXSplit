@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00100000000000000000001 /* TeXSplitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000001 /* TeXSplitApp.swift */; };
+		A00100000000000000000002 /* TeXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000002 /* TeXDocument.swift */; };
+		A00100000000000000000003 /* CompilationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000003 /* CompilationResult.swift */; };
+		A00100000000000000000004 /* LaTeXError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000004 /* LaTeXError.swift */; };
+		A00100000000000000000005 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000005 /* EditorViewModel.swift */; };
+		A00100000000000000000006 /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000006 /* CodeEditorView.swift */; };
+		A00100000000000000000007 /* EditorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000007 /* EditorContainerView.swift */; };
+		A00100000000000000000008 /* PDFPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000008 /* PDFPreviewView.swift */; };
+		A00100000000000000000009 /* PDFPreviewContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000009 /* PDFPreviewContainerView.swift */; };
+		A00100000000000000000010 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000010 /* StatusBarView.swift */; };
+		A00100000000000000000011 /* CompilerLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000011 /* CompilerLogView.swift */; };
+		A00100000000000000000012 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000012 /* ContentView.swift */; };
+		A00100000000000000000013 /* LaTeXCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000013 /* LaTeXCompiler.swift */; };
+		A00100000000000000000014 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000014 /* FileService.swift */; };
+		A00100000000000000000015 /* LaTeXErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000015 /* LaTeXErrorParser.swift */; };
+		A00100000000000000000016 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000016 /* ProcessRunner.swift */; };
+		A00100000000000000000017 /* WindowCloseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000017 /* WindowCloseHandler.swift */; };
+		A00100000000000000000018 /* CompilerPathResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000018 /* CompilerPathResolverTests.swift */; };
+		A00100000000000000000019 /* LaTeXErrorParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000019 /* LaTeXErrorParserTests.swift */; };
+		A00100000000000000000020 /* LaTeXCompilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000020 /* LaTeXCompilerTests.swift */; };
+		A00100000000000000000021 /* EditorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000021 /* EditorViewModelTests.swift */; };
+		A00100000000000000000022 /* TeXPackageInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000024 /* TeXPackageInstaller.swift */; };
+		A00100000000000000000023 /* TeXPackageInstallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000025 /* TeXPackageInstallerTests.swift */; };
+		A00100000000000000000024 /* TeXLive in Resources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000026 /* TeXLive */; };
+		A00100000000000000000025 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000027 /* AppSettings.swift */; };
+		A00100000000000000000026 /* EditorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000028 /* EditorTheme.swift */; };
+		A00100000000000000000027 /* WorkspaceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000029 /* WorkspaceSession.swift */; };
+		A00100000000000000000028 /* EditorTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000030 /* EditorTab.swift */; };
+		A00100000000000000000029 /* WorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000031 /* WorkspaceViewModel.swift */; };
+		A00100000000000000000030 /* EditorThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000032 /* EditorThemeProvider.swift */; };
+		A00100000000000000000031 /* SessionRestorationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000033 /* SessionRestorationService.swift */; };
+		A00100000000000000000032 /* LaTeXSyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000034 /* LaTeXSyntaxHighlighter.swift */; };
+		A00100000000000000000033 /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000035 /* LineNumberRulerView.swift */; };
+		A00100000000000000000034 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000036 /* WorkspaceView.swift */; };
+		A00100000000000000000035 /* DocumentTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000037 /* DocumentTabBar.swift */; };
+		A00100000000000000000036 /* DocumentTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000038 /* DocumentTabItem.swift */; };
+		A00100000000000000000037 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000039 /* SettingsView.swift */; };
+		A00100000000000000000038 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000040 /* GeneralSettingsView.swift */; };
+		A00100000000000000000039 /* EditorSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000041 /* EditorSettingsView.swift */; };
+		A00100000000000000000040 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000042 /* AppearanceSettingsView.swift */; };
+		A00100000000000000000041 /* LaTeXSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000043 /* LaTeXSettingsView.swift */; };
+		A00100000000000000000042 /* PreviewSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000044 /* PreviewSettingsView.swift */; };
+		A00100000000000000000043 /* WorkspaceViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000045 /* WorkspaceViewModelTests.swift */; };
+		A00100000000000000000044 /* LaTeXSyntaxHighlighterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000046 /* LaTeXSyntaxHighlighterTests.swift */; };
+		A00100000000000000000045 /* CodeEditorViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000047 /* CodeEditorViewTests.swift */; };
+		A00100000000000000000046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00200000000000000000048 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A00300000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00600000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00400000000000000000001;
+			remoteInfo = TeXSplit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A00200000000000000000001 /* TeXSplitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeXSplitApp.swift; sourceTree = "<group>"; };
+		A00200000000000000000002 /* TeXDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeXDocument.swift; sourceTree = "<group>"; };
+		A00200000000000000000003 /* CompilationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilationResult.swift; sourceTree = "<group>"; };
+		A00200000000000000000004 /* LaTeXError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXError.swift; sourceTree = "<group>"; };
+		A00200000000000000000005 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
+		A00200000000000000000006 /* CodeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorView.swift; sourceTree = "<group>"; };
+		A00200000000000000000007 /* EditorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorContainerView.swift; sourceTree = "<group>"; };
+		A00200000000000000000008 /* PDFPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewView.swift; sourceTree = "<group>"; };
+		A00200000000000000000009 /* PDFPreviewContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewContainerView.swift; sourceTree = "<group>"; };
+		A00200000000000000000010 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		A00200000000000000000011 /* CompilerLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerLogView.swift; sourceTree = "<group>"; };
+		A00200000000000000000012 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A00200000000000000000013 /* LaTeXCompiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXCompiler.swift; sourceTree = "<group>"; };
+		A00200000000000000000014 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		A00200000000000000000015 /* LaTeXErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXErrorParser.swift; sourceTree = "<group>"; };
+		A00200000000000000000016 /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		A00200000000000000000017 /* WindowCloseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCloseHandler.swift; sourceTree = "<group>"; };
+		A00200000000000000000018 /* CompilerPathResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerPathResolverTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000019 /* LaTeXErrorParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXErrorParserTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000020 /* LaTeXCompilerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXCompilerTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000021 /* EditorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModelTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000022 /* TeXSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeXSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00200000000000000000023 /* TeXSplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeXSplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00200000000000000000024 /* TeXPackageInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeXPackageInstaller.swift; sourceTree = "<group>"; };
+		A00200000000000000000025 /* TeXPackageInstallerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeXPackageInstallerTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000026 /* TeXLive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TeXLive; sourceTree = "<group>"; };
+		A00200000000000000000027 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		A00200000000000000000028 /* EditorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTheme.swift; sourceTree = "<group>"; };
+		A00200000000000000000029 /* WorkspaceSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceSession.swift; sourceTree = "<group>"; };
+		A00200000000000000000030 /* EditorTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTab.swift; sourceTree = "<group>"; };
+		A00200000000000000000031 /* WorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewModel.swift; sourceTree = "<group>"; };
+		A00200000000000000000032 /* EditorThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorThemeProvider.swift; sourceTree = "<group>"; };
+		A00200000000000000000033 /* SessionRestorationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRestorationService.swift; sourceTree = "<group>"; };
+		A00200000000000000000034 /* LaTeXSyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXSyntaxHighlighter.swift; sourceTree = "<group>"; };
+		A00200000000000000000035 /* LineNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
+		A00200000000000000000036 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
+		A00200000000000000000037 /* DocumentTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTabBar.swift; sourceTree = "<group>"; };
+		A00200000000000000000038 /* DocumentTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTabItem.swift; sourceTree = "<group>"; };
+		A00200000000000000000039 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A00200000000000000000040 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		A00200000000000000000041 /* EditorSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSettingsView.swift; sourceTree = "<group>"; };
+		A00200000000000000000042 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		A00200000000000000000043 /* LaTeXSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXSettingsView.swift; sourceTree = "<group>"; };
+		A00200000000000000000044 /* PreviewSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSettingsView.swift; sourceTree = "<group>"; };
+		A00200000000000000000045 /* WorkspaceViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewModelTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000046 /* LaTeXSyntaxHighlighterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXSyntaxHighlighterTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000047 /* CodeEditorViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorViewTests.swift; sourceTree = "<group>"; };
+		A00200000000000000000048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00500000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00500000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00700000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A00700000000000000000002 /* TeXSplit */,
+				A00700000000000000000010 /* TeXSplitTests */,
+				A00700000000000000000011 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00700000000000000000002 /* TeXSplit */ = {
+			isa = PBXGroup;
+			children = (
+				A00700000000000000000003 /* App */,
+				A00700000000000000000004 /* Models */,
+				A00700000000000000000005 /* ViewModels */,
+				A00700000000000000000006 /* Views */,
+				A00700000000000000000009 /* Services */,
+				A00700000000000000000013 /* Resources */,
+			);
+			path = TeXSplit;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000001 /* TeXSplitApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000002 /* TeXDocument.swift */,
+				A00200000000000000000003 /* CompilationResult.swift */,
+				A00200000000000000000004 /* LaTeXError.swift */,
+				A00200000000000000000027 /* AppSettings.swift */,
+				A00200000000000000000028 /* EditorTheme.swift */,
+				A00200000000000000000029 /* WorkspaceSession.swift */,
+				A00200000000000000000030 /* EditorTab.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000005 /* EditorViewModel.swift */,
+				A00200000000000000000031 /* WorkspaceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000012 /* ContentView.swift */,
+				A00200000000000000000036 /* WorkspaceView.swift */,
+				A00200000000000000000037 /* DocumentTabBar.swift */,
+				A00200000000000000000038 /* DocumentTabItem.swift */,
+				A00200000000000000000011 /* CompilerLogView.swift */,
+				A00200000000000000000017 /* WindowCloseHandler.swift */,
+				A00700000000000000000007 /* Editor */,
+				A00700000000000000000008 /* Preview */,
+				A00700000000000000000012 /* Status */,
+				A00700000000000000000014 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000007 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000006 /* CodeEditorView.swift */,
+				A00200000000000000000007 /* EditorContainerView.swift */,
+				A00200000000000000000035 /* LineNumberRulerView.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000008 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000008 /* PDFPreviewView.swift */,
+				A00200000000000000000009 /* PDFPreviewContainerView.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000013 /* LaTeXCompiler.swift */,
+				A00200000000000000000014 /* FileService.swift */,
+				A00200000000000000000015 /* LaTeXErrorParser.swift */,
+				A00200000000000000000016 /* ProcessRunner.swift */,
+				A00200000000000000000024 /* TeXPackageInstaller.swift */,
+				A00200000000000000000032 /* EditorThemeProvider.swift */,
+				A00200000000000000000033 /* SessionRestorationService.swift */,
+				A00200000000000000000034 /* LaTeXSyntaxHighlighter.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000010 /* TeXSplitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000018 /* CompilerPathResolverTests.swift */,
+				A00200000000000000000019 /* LaTeXErrorParserTests.swift */,
+				A00200000000000000000020 /* LaTeXCompilerTests.swift */,
+				A00200000000000000000021 /* EditorViewModelTests.swift */,
+				A00200000000000000000025 /* TeXPackageInstallerTests.swift */,
+				A00200000000000000000045 /* WorkspaceViewModelTests.swift */,
+				A00200000000000000000046 /* LaTeXSyntaxHighlighterTests.swift */,
+				A00200000000000000000047 /* CodeEditorViewTests.swift */,
+			);
+			path = TeXSplitTests;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000022 /* TeXSplit.app */,
+				A00200000000000000000023 /* TeXSplitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000012 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000010 /* StatusBarView.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000013 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000048 /* Assets.xcassets */,
+				A00200000000000000000026 /* TeXLive */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A00700000000000000000014 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A00200000000000000000039 /* SettingsView.swift */,
+				A00200000000000000000040 /* GeneralSettingsView.swift */,
+				A00200000000000000000041 /* EditorSettingsView.swift */,
+				A00200000000000000000042 /* AppearanceSettingsView.swift */,
+				A00200000000000000000043 /* LaTeXSettingsView.swift */,
+				A00200000000000000000044 /* PreviewSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00400000000000000000001 /* TeXSplit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00900000000000000000001 /* Build configuration list for PBXNativeTarget "TeXSplit" */;
+			buildPhases = (
+				A00800000000000000000001 /* Sources */,
+				A00500000000000000000001 /* Frameworks */,
+				A01000000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeXSplit;
+			productName = TeXSplit;
+			productReference = A00200000000000000000022 /* TeXSplit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00400000000000000000002 /* TeXSplitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00900000000000000000002 /* Build configuration list for PBXNativeTarget "TeXSplitTests" */;
+			buildPhases = (
+				A00800000000000000000002 /* Sources */,
+				A00500000000000000000002 /* Frameworks */,
+				A01000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A01100000000000000000001 /* PBXTargetDependency */,
+			);
+			name = TeXSplitTests;
+			productName = TeXSplitTests;
+			productReference = A00200000000000000000023 /* TeXSplitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00600000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					A00400000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A00400000000000000000002 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A00400000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A00900000000000000000003 /* Build configuration list for PBXProject "TeXSplit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00700000000000000000001;
+			productRefGroup = A00700000000000000000011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00400000000000000000001 /* TeXSplit */,
+				A00400000000000000000002 /* TeXSplitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A01000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00100000000000000000046 /* Assets.xcassets in Resources */,
+				A00100000000000000000024 /* TeXLive in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00800000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00100000000000000000001 /* TeXSplitApp.swift in Sources */,
+				A00100000000000000000002 /* TeXDocument.swift in Sources */,
+				A00100000000000000000003 /* CompilationResult.swift in Sources */,
+				A00100000000000000000004 /* LaTeXError.swift in Sources */,
+				A00100000000000000000005 /* EditorViewModel.swift in Sources */,
+				A00100000000000000000006 /* CodeEditorView.swift in Sources */,
+				A00100000000000000000007 /* EditorContainerView.swift in Sources */,
+				A00100000000000000000008 /* PDFPreviewView.swift in Sources */,
+				A00100000000000000000009 /* PDFPreviewContainerView.swift in Sources */,
+				A00100000000000000000010 /* StatusBarView.swift in Sources */,
+				A00100000000000000000011 /* CompilerLogView.swift in Sources */,
+				A00100000000000000000012 /* ContentView.swift in Sources */,
+				A00100000000000000000013 /* LaTeXCompiler.swift in Sources */,
+				A00100000000000000000014 /* FileService.swift in Sources */,
+				A00100000000000000000015 /* LaTeXErrorParser.swift in Sources */,
+				A00100000000000000000016 /* ProcessRunner.swift in Sources */,
+				A00100000000000000000017 /* WindowCloseHandler.swift in Sources */,
+				A00100000000000000000022 /* TeXPackageInstaller.swift in Sources */,
+				A00100000000000000000025 /* AppSettings.swift in Sources */,
+				A00100000000000000000026 /* EditorTheme.swift in Sources */,
+				A00100000000000000000027 /* WorkspaceSession.swift in Sources */,
+				A00100000000000000000028 /* EditorTab.swift in Sources */,
+				A00100000000000000000029 /* WorkspaceViewModel.swift in Sources */,
+				A00100000000000000000030 /* EditorThemeProvider.swift in Sources */,
+				A00100000000000000000031 /* SessionRestorationService.swift in Sources */,
+				A00100000000000000000032 /* LaTeXSyntaxHighlighter.swift in Sources */,
+				A00100000000000000000033 /* LineNumberRulerView.swift in Sources */,
+				A00100000000000000000034 /* WorkspaceView.swift in Sources */,
+				A00100000000000000000035 /* DocumentTabBar.swift in Sources */,
+				A00100000000000000000036 /* DocumentTabItem.swift in Sources */,
+				A00100000000000000000037 /* SettingsView.swift in Sources */,
+				A00100000000000000000038 /* GeneralSettingsView.swift in Sources */,
+				A00100000000000000000039 /* EditorSettingsView.swift in Sources */,
+				A00100000000000000000040 /* AppearanceSettingsView.swift in Sources */,
+				A00100000000000000000041 /* LaTeXSettingsView.swift in Sources */,
+				A00100000000000000000042 /* PreviewSettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00800000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00100000000000000000018 /* CompilerPathResolverTests.swift in Sources */,
+				A00100000000000000000019 /* LaTeXErrorParserTests.swift in Sources */,
+				A00100000000000000000020 /* LaTeXCompilerTests.swift in Sources */,
+				A00100000000000000000021 /* EditorViewModelTests.swift in Sources */,
+				A00100000000000000000023 /* TeXPackageInstallerTests.swift in Sources */,
+				A00100000000000000000043 /* WorkspaceViewModelTests.swift in Sources */,
+				A00100000000000000000044 /* LaTeXSyntaxHighlighterTests.swift in Sources */,
+				A00100000000000000000045 /* CodeEditorViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A01100000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00400000000000000000001 /* TeXSplit */;
+			targetProxy = A00300000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A01200000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A01200000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A01200000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TeXSplit;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.abddev.texsplit;
+				PRODUCT_NAME = TeXSplit;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A01200000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TeXSplit;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.abddev.texsplit;
+				PRODUCT_NAME = TeXSplit;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A01200000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.abddev.texsplit.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeXSplit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TeXSplit";
+			};
+			name = Debug;
+		};
+		A01200000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.abddev.texsplit.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeXSplit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TeXSplit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00900000000000000000001 /* Build configuration list for PBXNativeTarget "TeXSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01200000000000000000003 /* Debug */,
+				A01200000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00900000000000000000002 /* Build configuration list for PBXNativeTarget "TeXSplitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01200000000000000000005 /* Debug */,
+				A01200000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00900000000000000000003 /* Build configuration list for PBXProject "TeXSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01200000000000000000001 /* Debug */,
+				A01200000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00600000000000000000001 /* Project object */;
+}
