@@ -114,14 +114,16 @@ final class LaTeXSyntaxHighlighter {
         var index = 0
 
         while index < nsText.length {
-            if nsText.substring(with: NSRange(location: index, length: min(2, nsText.length - index))) == "\\(" {
+            if nsText.substring(with: NSRange(location: index, length: min(2, nsText.length - index))) == "\\(",
+               !isPartOfDoubleBackslashCommand(nsText, index: index) {
                 if let end = rangeOf("\\)", in: nsText, start: index + 2) {
                     tokens.append(LaTeXToken(kind: .math, range: NSRange(location: index, length: NSMaxRange(end) - index)))
                     index = NSMaxRange(end)
                     continue
                 }
             }
-            if nsText.substring(with: NSRange(location: index, length: min(2, nsText.length - index))) == "\\[" {
+            if nsText.substring(with: NSRange(location: index, length: min(2, nsText.length - index))) == "\\[",
+               !isPartOfDoubleBackslashCommand(nsText, index: index) {
                 if let end = rangeOf("\\]", in: nsText, start: index + 2) {
                     tokens.append(LaTeXToken(kind: .math, range: NSRange(location: index, length: NSMaxRange(end) - index)))
                     index = NSMaxRange(end)
@@ -165,6 +167,10 @@ final class LaTeXSyntaxHighlighter {
     private func nextCharacters(in text: NSString, at index: Int, equal value: String) -> Bool {
         guard index + value.count <= text.length else { return false }
         return text.substring(with: NSRange(location: index, length: value.count)) == value
+    }
+
+    private func isPartOfDoubleBackslashCommand(_ text: NSString, index: Int) -> Bool {
+        index > 0 && text.character(at: index - 1) == 92
     }
 
     private func isEscapedDollar(_ text: NSString, index: Int) -> Bool {

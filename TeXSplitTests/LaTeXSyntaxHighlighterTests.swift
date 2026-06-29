@@ -76,6 +76,58 @@ final class LaTeXSyntaxHighlighterTests: XCTestCase {
         XCTAssertTrue(math.contains(#"\( q \)"#))
     }
 
+    func testLineBreakSpacingDoesNotStartDisplayMathRegion() {
+        let source = #"""
+        \begin{center}
+            {\LARGE\textbf{Elektronik -- Fragenkatalog}}\\[0.4cm]
+        \end{center}
+
+        \frage{
+        Unter welchen Bedingungen dürfen ideale Spannungsquellen parallel geschaltet werden
+        und warum?
+        }{2.5cm}
+
+        \[
+        C_1=C_2=\dots=C_n=C
+        \]
+
+        normaler Text
+        """#
+        let tokens = LaTeXSyntaxHighlighter().tokens(in: source)
+        let math = tokens.filter { $0.kind == .math }.map { text(source, in: $0.range) }
+
+        XCTAssertEqual(math, [
+            """
+            \\[
+            C_1=C_2=\\dots=C_n=C
+            \\]
+            """
+        ])
+        XCTAssertFalse(math.contains { $0.contains("Unter welchen Bedingungen") })
+        XCTAssertFalse(math.contains { $0.contains("normaler Text") })
+    }
+
+    func testLineBreakSpacingKeepsQuestionTextInBaseColor() {
+        let source = #"""
+        {\LARGE\textbf{Elektronik -- Fragenkatalog}}\\[0.4cm]
+
+        \frage{
+        Unter welchen Bedingungen dürfen ideale Spannungsquellen parallel geschaltet werden
+        und warum?
+        }{2.5cm}
+        """#
+        let storage = NSTextStorage(string: source)
+        let theme = EditorThemeProvider.theme(for: .xcodeDark, appearance: NSAppearance(named: .darkAqua) ?? NSApp.effectiveAppearance)
+
+        LaTeXSyntaxHighlighter().highlight(
+            textStorage: storage,
+            theme: theme,
+            baseFont: NSFont.monospacedSystemFont(ofSize: 14, weight: .regular)
+        )
+
+        XCTAssertEqual(color(in: storage, at: "Unter welchen Bedingungen"), theme.textColor)
+    }
+
     func testRecognizesEnvironmentNames() {
         let source = "\\begin{enumerate}\\item A\\end{enumerate}"
         let tokens = LaTeXSyntaxHighlighter().tokens(in: source)
