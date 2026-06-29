@@ -11,6 +11,11 @@ final class CodeEditorViewTests: XCTestCase {
             XCTAssertNotEqual(theme.backgroundColor, theme.textColor, "\(id.title) background/text must contrast")
             XCTAssertNotEqual(theme.selectionColor, theme.selectedTextColor, "\(id.title) selection colors must contrast")
             XCTAssertNotEqual(theme.backgroundColor, theme.caretColor, "\(id.title) caret must be visible")
+            XCTAssertNotEqual(theme.commandColor, theme.textColor, "\(id.title) commands should use a dedicated IDE color")
+            XCTAssertNotEqual(theme.commentColor, theme.textColor, "\(id.title) comments should use a dedicated IDE color")
+            XCTAssertNotEqual(theme.mathColor, theme.textColor, "\(id.title) math should use a dedicated IDE color")
+            XCTAssertNotEqual(theme.environmentColor, theme.textColor, "\(id.title) environments should use a dedicated IDE color")
+            XCTAssertNotEqual(theme.braceColor, theme.textColor, "\(id.title) braces should use a dedicated IDE color")
         }
     }
 

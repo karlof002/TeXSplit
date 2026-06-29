@@ -44,6 +44,28 @@ final class LaTeXSyntaxHighlighterTests: XCTestCase {
         XCTAssertEqual(firstAttributes[.font] as? NSFont, font)
     }
 
+    func testHighlightAppliesIDEStyleTokenColors() {
+        let source = """
+        \\section{Einleitung}
+        \\begin{document}
+        $E = mc^2$
+        % \\section bleibt Kommentar
+        \\end{document}
+        """
+        let storage = NSTextStorage(string: source)
+        let theme = EditorThemeProvider.theme(for: .xcodeDark, appearance: NSAppearance(named: .darkAqua) ?? NSApp.effectiveAppearance)
+        let font = NSFont.monospacedSystemFont(ofSize: 14, weight: .regular)
+
+        LaTeXSyntaxHighlighter().highlight(textStorage: storage, theme: theme, baseFont: font)
+
+        XCTAssertEqual(color(in: storage, at: "\\section"), theme.commandColor)
+        XCTAssertEqual(color(in: storage, at: "document"), theme.environmentColor)
+        XCTAssertEqual(color(in: storage, at: "$E = mc^2$"), theme.mathColor)
+        XCTAssertEqual(color(in: storage, at: "{"), theme.braceColor)
+        XCTAssertEqual(color(in: storage, at: "% \\section bleibt Kommentar"), theme.commentColor)
+        XCTAssertEqual(storage.string, source)
+    }
+
     func testRecognizesMathRegions() {
         let source = #"a $x+y$ b \[ z^2 \] c \( q \)"#
         let tokens = LaTeXSyntaxHighlighter().tokens(in: source)
@@ -71,5 +93,11 @@ final class LaTeXSyntaxHighlighterTests: XCTestCase {
 
     private func text(_ source: String, in range: NSRange) -> String {
         (source as NSString).substring(with: range)
+    }
+
+    private func color(in storage: NSTextStorage, at substring: String) -> NSColor? {
+        let range = (storage.string as NSString).range(of: substring)
+        guard range.location != NSNotFound else { return nil }
+        return storage.attribute(.foregroundColor, at: range.location, effectiveRange: nil) as? NSColor
     }
 }
