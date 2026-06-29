@@ -81,6 +81,15 @@ final class CodeEditorViewTests: XCTestCase {
         XCTAssertEqual(textView.typingAttributes[.foregroundColor] as? NSColor, settings.selectedTheme.textColor)
     }
 
+    func testLineNumberGutterUsesDocumentCoordinatesForHorizontalScrolling() {
+        let textView = CodeTextView()
+        let dirtyRect = NSRect(x: 400, y: 10, width: 200, height: 80)
+
+        XCTAssertEqual(textView.lineNumberGutterRect(in: dirtyRect).origin.x, 0)
+        XCTAssertEqual(textView.lineNumberGutterRect(in: dirtyRect).width, textView.gutterWidth)
+        XCTAssertEqual(textView.lineNumberLabelX(forWidth: 20), textView.gutterWidth - 28)
+    }
+
     private func color(in textView: NSTextView, at substring: String) -> NSColor? {
         let range = (textView.string as NSString).range(of: substring)
         guard range.location != NSNotFound else { return nil }

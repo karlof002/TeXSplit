@@ -31,7 +31,7 @@ final class CodeTextView: NSTextView {
               layoutManager.numberOfGlyphs > 0 else { return }
 
         lineNumberTheme.backgroundColor.setFill()
-        NSRect(x: visibleRect.minX, y: rect.minY, width: gutterWidth, height: rect.height).fill()
+        lineNumberGutterRect(in: rect).fill()
 
         let text = string as NSString
         let glyphRange = layoutManager.glyphRange(forBoundingRect: visibleRect, in: textContainer)
@@ -54,12 +54,20 @@ final class CodeTextView: NSTextView {
             let label = "\(lineNumber)" as NSString
             let size = label.size(withAttributes: attributes)
             label.draw(
-                at: NSPoint(x: visibleRect.minX + gutterWidth - size.width - 8, y: y),
+                at: NSPoint(x: lineNumberLabelX(forWidth: size.width), y: y),
                 withAttributes: attributes
             )
             glyphIndex = NSMaxRange(effectiveRange)
             lineNumber += 1
         }
+    }
+
+    func lineNumberGutterRect(in rect: NSRect) -> NSRect {
+        NSRect(x: 0, y: rect.minY, width: gutterWidth, height: rect.height)
+    }
+
+    func lineNumberLabelX(forWidth labelWidth: CGFloat) -> CGFloat {
+        gutterWidth - labelWidth - 8
     }
 }
 
