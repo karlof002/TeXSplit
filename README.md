@@ -2,6 +2,12 @@
 
 TeXSplit ist ein nativer LaTeX-Editor fuer macOS. Die App kombiniert einen schnellen `NSTextView`-Codeeditor mit Zeilennummern, Syntax-Highlighting, Tabs und einer PDFKit-Vorschau fuer kompiliertes LaTeX.
 
+## Screenshots
+
+![TeXSplit editor in dark mode with LaTeX syntax highlighting](Documentation/Screenshots/texsplit-editor-dark.png)
+
+![TeXSplit editor in light mode with LaTeX syntax highlighting](Documentation/Screenshots/texsplit-editor-light.png)
+
 ## Was die App macht
 
 - `.tex`-Dateien oeffnen, bearbeiten, speichern und speichern unter

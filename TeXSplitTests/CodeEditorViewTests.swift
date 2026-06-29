@@ -62,4 +62,28 @@ final class CodeEditorViewTests: XCTestCase {
         XCTAssertEqual(textView.typingAttributes[.font] as? NSFont, settings.editorFont)
         XCTAssertEqual(textView.string, #"\section{Einleitung}"#)
     }
+
+    func testCoordinatorHighlightKeepsTokenAttributesVisible() {
+        let settings = AppSettings(defaults: UserDefaults(suiteName: UUID().uuidString) ?? .standard)
+        settings.editorThemeID = .xcodeDark
+        settings.syntaxHighlightingEnabled = true
+        let source = #"\section{Einleitung}"#
+        let editor = CodeEditorView(text: .constant(source), settings: settings, onCursorChange: { _, _ in })
+        let coordinator = CodeEditorView.Coordinator(editor)
+        let textView = NSTextView()
+        textView.string = source
+
+        coordinator.applySettings(to: textView, scrollView: NSScrollView(), settings: settings)
+        coordinator.highlight(textView, settings: settings)
+
+        XCTAssertEqual(color(in: textView, at: "\\section"), settings.selectedTheme.commandColor)
+        XCTAssertEqual(color(in: textView, at: "{"), settings.selectedTheme.braceColor)
+        XCTAssertEqual(textView.typingAttributes[.foregroundColor] as? NSColor, settings.selectedTheme.textColor)
+    }
+
+    private func color(in textView: NSTextView, at substring: String) -> NSColor? {
+        let range = (textView.string as NSString).range(of: substring)
+        guard range.location != NSNotFound else { return nil }
+        return textView.textStorage?.attribute(.foregroundColor, at: range.location, effectiveRange: nil) as? NSColor
+    }
 }

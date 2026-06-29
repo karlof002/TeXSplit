@@ -301,7 +301,10 @@ struct CodeEditorView: NSViewRepresentable {
             isHighlighting = true
             defer {
                 textView.selectedRanges = clampedSelectedRanges(selectedRanges, textLength: (textView.string as NSString).length)
-                applyTextAppearance(to: textView, settings: settings)
+                textView.typingAttributes = [
+                    .font: settings.editorFont,
+                    .foregroundColor: settings.selectedTheme.textColor
+                ]
                 isHighlighting = false
                 updateCurrentLineHighlight(textView, settings: settings)
             }
